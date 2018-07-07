@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kL2-QR-ztR">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="fdY-4M-nCz">
+            <objects>
+                <viewController id="NAh-Er-ZoY" customClass="ViewController" customModule="CustomStepperInTableView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pso-9X-Dtc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="P4D-NB-t93">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="97" id="gA7-kT-li2" customClass="CustomCell" customModule="CustomStepperInTableView" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="97"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gA7-kT-li2" id="VGy-X8-8I4">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="96.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hbc-xc-x7P" customClass="GMStepper" customModule="CustomStepperInTableView" customModuleProvider="target">
+                                                    <rect key="frame" x="10" y="33.5" width="149" height="29"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="29" id="7cD-gS-6BE"/>
+                                                        <constraint firstAttribute="width" constant="149" id="F6T-jh-HUk"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="minimumValue">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableManualEditing" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="stepValue">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="autorepeat" value="NO"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="showIntegerIfDoubleIsInteger" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="leftButtonText" value="-"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="rightButtonText" value="+"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="labelTextColor">
+                                                            <color key="value" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="labelBackgroundColor">
+                                                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="valueChanged1:" destination="NAh-Er-ZoY" eventType="valueChanged" id="cnv-UA-oKS"/>
+                                                    </connections>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Hbc-xc-x7P" firstAttribute="leading" secondItem="VGy-X8-8I4" secondAttribute="leading" constant="10" id="dB6-wp-IO6"/>
+                                                <constraint firstItem="Hbc-xc-x7P" firstAttribute="centerY" secondItem="VGy-X8-8I4" secondAttribute="centerY" id="jos-5d-NJ5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="steppere" destination="Hbc-xc-x7P" id="Gg5-uV-jGJ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="EJ2-L3-9Gr" firstAttribute="bottom" secondItem="P4D-NB-t93" secondAttribute="bottom" id="5UK-NJ-Deu"/>
+                            <constraint firstItem="P4D-NB-t93" firstAttribute="top" secondItem="EJ2-L3-9Gr" secondAttribute="top" id="6xt-eP-Jez"/>
+                            <constraint firstItem="EJ2-L3-9Gr" firstAttribute="trailing" secondItem="P4D-NB-t93" secondAttribute="trailing" id="qqD-vp-TSG"/>
+                            <constraint firstItem="P4D-NB-t93" firstAttribute="leading" secondItem="EJ2-L3-9Gr" secondAttribute="leading" id="tgy-Nc-IlL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="EJ2-L3-9Gr"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="AUW-fW-m2K">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="Pza-YZ-UZb">
+                            <connections>
+                                <action selector="doneButonAction:" destination="NAh-Er-ZoY" id="1tG-vB-pU8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableview" destination="P4D-NB-t93" id="N4U-ii-gi3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r4U-Ql-qYJ" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="896.79999999999995" y="117.39130434782609"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rPz-RB-vRj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kL2-QR-ztR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hza-L3-ZxU">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NAh-Er-ZoY" kind="relationship" relationship="rootViewController" id="s4F-fk-eky"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SHL-rK-r5a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-42.399999999999999" y="117.39130434782609"/>
+        </scene>
+    </scenes>
+</document>
